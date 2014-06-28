@@ -1,1 +1,2 @@
 este es un archivo para ver conexion con la rama de desarrollo (desa)
+DESDE TERMINAL ENVIANDO desarrollo
