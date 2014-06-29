@@ -1,3 +1,4 @@
+# encoding: utf-8 
 from django.db import models
 
 # Create your models here.
@@ -12,7 +13,7 @@ class Medio(models.Model):
  nombre_me = models.CharField(max_length=30)
  url = models.CharField(max_length=100)
 
-def __unicode__(self):
+ def __unicode__(self):
   return self.nombre_me				
 
 class Otrostemas(models.Model):
@@ -36,10 +37,10 @@ def __unicode__(self):
  	return self.nombre_te
 
 class Area(models.Model):
-  nombre_ar = models.CharField(max_length=30)
+ nombre_ar = models.CharField(max_length=30)
 
-def __unicode__(self):
- return self.nombre_ar
+ def __unicode__(self):
+  return self.nombre_ar
 
 class Subtema(models.Model):
  nombre_sub = models.CharField(max_length=150)
