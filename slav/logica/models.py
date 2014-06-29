@@ -19,22 +19,22 @@ class Medio(models.Model):
 class Otrostemas(models.Model):
  otrostemas = models.CharField(max_length=100)
  
-def __unicode__(self):
-   return self.otrostemas
+ def __unicode__(self):
+  return self.otrostemas
 
 class Protagonista(models.Model):
   nombre_pro = models.CharField(max_length=50)
   genero_pro = models.CharField(max_length=1)
   cargo = models.CharField(max_length=150)
  
-def __unicode__(self):
+  def __unicode__(self):
    return self.nombre_pro
 
 class Tema(models.Model):
   nombre_te = models.CharField(max_length=150)
  
-def __unicode__(self):
- 	return self.nombre_te
+  def __unicode__(self):
+ 	 return self.nombre_te
 
 class Area(models.Model):
  nombre_ar = models.CharField(max_length=30)
@@ -45,7 +45,7 @@ class Area(models.Model):
 class Subtema(models.Model):
  nombre_sub = models.CharField(max_length=150)
 
-def __unicode__(self): 
+ def __unicode__(self): 
   return self.nombre_sub
 
 class Nota(models.Model):
@@ -57,8 +57,8 @@ class Nota(models.Model):
   sintesis = models.TextField(max_length=254)
   texto = models.TextField(max_length=10000)
 
-def __unicode__(self):
-  	return self.titulo
+  def __unicode__(self):
+   return self.titulo
 
 class Colabora_en(models.Model):
  autor = models.ForeignKey(Autor)
@@ -72,8 +72,9 @@ class Declarada_por(models.Model):
   nota = models.ForeignKey(Nota)
   medio = models.ForeignKey(Medio)
   evaluacion = models.CharField(max_length=1)
-def __unicode__(self):
- 	return self.evaluacion	
+
+  def __unicode__(self):
+ 	 return self.evaluacion	
 
 class Derivado_de(models.Model):
   subtema = models.ForeignKey(Subtema)
