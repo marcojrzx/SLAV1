@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+RUTA_PROYECTO = os.path.dirname(os.path.realpath(__file__))
+
+#encoding:utf-8
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -22,7 +25,13 @@ SECRET_KEY = '$05_jay21yvn&cpe&_pn0*$bdk5i5*1ahfu=w_!6&x_2z)7@qt'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+DEBUG_TOOLBAR_PATCH_SETTINGS = False
+
 TEMPLATE_DEBUG = True
+
+TEMPLATE_DIRS=(
+        os.path.join(RUTA_PROYECTO, 'plantillas'),
+     )
 
 ALLOWED_HOSTS = []
 
@@ -35,7 +44,8 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles',    
+    'tastypie'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -51,21 +61,29 @@ ROOT_URLCONF = 'slav.urls'
 
 WSGI_APPLICATION = 'slav.wsgi.application'
 
+EDIA_ROOT = os.path.join(RUTA_PROYECTO, 'carga')
+
+MEDIA_URL = '/media/'
+
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'mysql.connector.django',
+        'NAME': 'sla',
+        'USER': 'marco',
+        'PASSWORD': '201598765',
+        'HOST': 'localhost',
+
     }
 }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-PE'
 
 TIME_ZONE = 'UTC'
 
