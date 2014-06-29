@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-06-2014 a las 02:38:59
+-- Tiempo de generación: 29-06-2014 a las 04:39:46
 -- Versión del servidor: 5.5.34
 -- Versión de PHP: 5.4.22
 
@@ -19,18 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `sla`
 --
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `area`
---
-
-CREATE TABLE IF NOT EXISTS `area` (
-  `id` int(9) NOT NULL AUTO_INCREMENT,
-  `nombre` char(35) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -75,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `auth_permission` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `content_type_id` (`content_type_id`,`codename`),
   KEY `auth_permission_37ef4eb4` (`content_type_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=25 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=70 ;
 
 --
 -- Volcado de datos para la tabla `auth_permission`
@@ -105,7 +93,52 @@ INSERT INTO `auth_permission` (`id`, `name`, `content_type_id`, `codename`) VALU
 (21, 'Can delete api access', 7, 'delete_apiaccess'),
 (22, 'Can add api key', 8, 'add_apikey'),
 (23, 'Can change api key', 8, 'change_apikey'),
-(24, 'Can delete api key', 8, 'delete_apikey');
+(24, 'Can delete api key', 8, 'delete_apikey'),
+(25, 'Can add autor', 9, 'add_autor'),
+(26, 'Can change autor', 9, 'change_autor'),
+(27, 'Can delete autor', 9, 'delete_autor'),
+(28, 'Can add medio', 10, 'add_medio'),
+(29, 'Can change medio', 10, 'change_medio'),
+(30, 'Can delete medio', 10, 'delete_medio'),
+(31, 'Can add otrostemas', 11, 'add_otrostemas'),
+(32, 'Can change otrostemas', 11, 'change_otrostemas'),
+(33, 'Can delete otrostemas', 11, 'delete_otrostemas'),
+(34, 'Can add protagonista', 12, 'add_protagonista'),
+(35, 'Can change protagonista', 12, 'change_protagonista'),
+(36, 'Can delete protagonista', 12, 'delete_protagonista'),
+(37, 'Can add tema', 13, 'add_tema'),
+(38, 'Can change tema', 13, 'change_tema'),
+(39, 'Can delete tema', 13, 'delete_tema'),
+(40, 'Can add area', 14, 'add_area'),
+(41, 'Can change area', 14, 'change_area'),
+(42, 'Can delete area', 14, 'delete_area'),
+(43, 'Can add subtema', 15, 'add_subtema'),
+(44, 'Can change subtema', 15, 'change_subtema'),
+(45, 'Can delete subtema', 15, 'delete_subtema'),
+(46, 'Can add nota', 16, 'add_nota'),
+(47, 'Can change nota', 16, 'change_nota'),
+(48, 'Can delete nota', 16, 'delete_nota'),
+(49, 'Can add colabora_en', 17, 'add_colabora_en'),
+(50, 'Can change colabora_en', 17, 'change_colabora_en'),
+(51, 'Can delete colabora_en', 17, 'delete_colabora_en'),
+(52, 'Can add correspondiete_a', 18, 'add_correspondiete_a'),
+(53, 'Can change correspondiete_a', 18, 'change_correspondiete_a'),
+(54, 'Can delete correspondiete_a', 18, 'delete_correspondiete_a'),
+(55, 'Can add declarada_por', 19, 'add_declarada_por'),
+(56, 'Can change declarada_por', 19, 'change_declarada_por'),
+(57, 'Can delete declarada_por', 19, 'delete_declarada_por'),
+(58, 'Can add derivado_de', 20, 'add_derivado_de'),
+(59, 'Can change derivado_de', 20, 'change_derivado_de'),
+(60, 'Can delete derivado_de', 20, 'delete_derivado_de'),
+(61, 'Can add escrita_por', 21, 'add_escrita_por'),
+(62, 'Can change escrita_por', 21, 'change_escrita_por'),
+(63, 'Can delete escrita_por', 21, 'delete_escrita_por'),
+(64, 'Can add publicada_en', 22, 'add_publicada_en'),
+(65, 'Can change publicada_en', 22, 'change_publicada_en'),
+(66, 'Can delete publicada_en', 22, 'delete_publicada_en'),
+(67, 'Can add trata_de', 23, 'add_trata_de'),
+(68, 'Can change trata_de', 23, 'change_trata_de'),
+(69, 'Can delete trata_de', 23, 'delete_trata_de');
 
 -- --------------------------------------------------------
 
@@ -134,7 +167,7 @@ CREATE TABLE IF NOT EXISTS `auth_user` (
 --
 
 INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
-(1, 'pbkdf2_sha256$12000$vIe0DWw9KKxl$7Q4w0pxJE7hmVRTRksdRzs79pPcO1SC3m/cGUZVFcfo=', '2014-06-29 00:37:39', 1, 'marcojrzx', '', '', 'marcojrzx@hotmail.com', 1, 1, '2014-06-29 00:37:39');
+(1, 'pbkdf2_sha256$12000$vIe0DWw9KKxl$7Q4w0pxJE7hmVRTRksdRzs79pPcO1SC3m/cGUZVFcfo=', '2014-06-29 01:11:16', 1, 'marcojrzx', '', '', 'marcojrzx@hotmail.com', 1, 1, '2014-06-29 00:37:39');
 
 -- --------------------------------------------------------
 
@@ -171,19 +204,6 @@ CREATE TABLE IF NOT EXISTS `auth_user_user_permissions` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `autor`
---
-
-CREATE TABLE IF NOT EXISTS `autor` (
-  `id` mediumint(9) NOT NULL AUTO_INCREMENT,
-  `nombre` char(30) COLLATE utf8_unicode_ci NOT NULL,
-  `genero` char(1) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `django_admin_log`
 --
 
@@ -199,7 +219,14 @@ CREATE TABLE IF NOT EXISTS `django_admin_log` (
   PRIMARY KEY (`id`),
   KEY `django_admin_log_6340c63c` (`user_id`),
   KEY `django_admin_log_37ef4eb4` (`content_type_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `django_admin_log`
+--
+
+INSERT INTO `django_admin_log` (`id`, `action_time`, `user_id`, `content_type_id`, `object_id`, `object_repr`, `action_flag`, `change_message`) VALUES
+(1, '2014-06-29 01:14:58', 1, 9, '1', 'Alicia', 1, '');
 
 -- --------------------------------------------------------
 
@@ -214,7 +241,7 @@ CREATE TABLE IF NOT EXISTS `django_content_type` (
   `model` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `app_label` (`app_label`,`model`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=24 ;
 
 --
 -- Volcado de datos para la tabla `django_content_type`
@@ -228,7 +255,22 @@ INSERT INTO `django_content_type` (`id`, `name`, `app_label`, `model`) VALUES
 (5, 'content type', 'contenttypes', 'contenttype'),
 (6, 'session', 'sessions', 'session'),
 (7, 'api access', 'tastypie', 'apiaccess'),
-(8, 'api key', 'tastypie', 'apikey');
+(8, 'api key', 'tastypie', 'apikey'),
+(9, 'autor', 'logica', 'autor'),
+(10, 'medio', 'logica', 'medio'),
+(11, 'otrostemas', 'logica', 'otrostemas'),
+(12, 'protagonista', 'logica', 'protagonista'),
+(13, 'tema', 'logica', 'tema'),
+(14, 'area', 'logica', 'area'),
+(15, 'subtema', 'logica', 'subtema'),
+(16, 'nota', 'logica', 'nota'),
+(17, 'colabora_en', 'logica', 'colabora_en'),
+(18, 'correspondiete_a', 'logica', 'correspondiete_a'),
+(19, 'declarada_por', 'logica', 'declarada_por'),
+(20, 'derivado_de', 'logica', 'derivado_de'),
+(21, 'escrita_por', 'logica', 'escrita_por'),
+(22, 'publicada_en', 'logica', 'publicada_en'),
+(23, 'trata_de', 'logica', 'trata_de');
 
 -- --------------------------------------------------------
 
@@ -244,62 +286,232 @@ CREATE TABLE IF NOT EXISTS `django_session` (
   KEY `django_session_b7b81f0c` (`expire_date`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- --------------------------------------------------------
-
 --
--- Estructura de tabla para la tabla `medio`
+-- Volcado de datos para la tabla `django_session`
 --
 
-CREATE TABLE IF NOT EXISTS `medio` (
-  `id_md` mediumint(9) NOT NULL AUTO_INCREMENT,
-  `nombre_md` char(30) COLLATE utf8_unicode_ci NOT NULL,
-  `url` char(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id_md`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
+('a6lcupc1bllgihxi1gu9m17stxicwmit', 'YTAwYmQzNzg3N2NhYzY3OTdmYWFmMTQwZTMwMmU3ZjdlY2JiNTAyOTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9pZCI6MX0=', '2014-07-13 01:11:16');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nota`
+-- Estructura de tabla para la tabla `logica_area`
 --
 
-CREATE TABLE IF NOT EXISTS `nota` (
+CREATE TABLE IF NOT EXISTS `logica_area` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `titulo` char(50) COLLATE utf8_unicode_ci NOT NULL,
+  `nombre_ar` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `logica_autor`
+--
+
+CREATE TABLE IF NOT EXISTS `logica_autor` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `genero` varchar(1) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `logica_autor`
+--
+
+INSERT INTO `logica_autor` (`id`, `nombre`, `genero`) VALUES
+(1, 'Alicia', 'F');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `logica_colabora_en`
+--
+
+CREATE TABLE IF NOT EXISTS `logica_colabora_en` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `autor_id` int(11) NOT NULL,
+  `medio_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `logica_colabora_en_40e8bcf3` (`autor_id`),
+  KEY `logica_colabora_en_90211594` (`medio_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `logica_correspondiete_a`
+--
+
+CREATE TABLE IF NOT EXISTS `logica_correspondiete_a` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tema_id` int(11) NOT NULL,
+  `area_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `logica_correspondiete_a_f706bc30` (`tema_id`),
+  KEY `logica_correspondiete_a_a4563695` (`area_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `logica_declarada_por`
+--
+
+CREATE TABLE IF NOT EXISTS `logica_declarada_por` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nota_id` int(11) NOT NULL,
+  `medio_id` int(11) NOT NULL,
+  `evaluacion` varchar(1) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `logica_declarada_por_14b35267` (`nota_id`),
+  KEY `logica_declarada_por_90211594` (`medio_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `logica_derivado_de`
+--
+
+CREATE TABLE IF NOT EXISTS `logica_derivado_de` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `subtema_id` int(11) NOT NULL,
+  `Tema_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `logica_derivado_de_48de5993` (`subtema_id`),
+  KEY `logica_derivado_de_0b10816e` (`Tema_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `logica_escrita_por`
+--
+
+CREATE TABLE IF NOT EXISTS `logica_escrita_por` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `autor_id` int(11) NOT NULL,
+  `nota_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `logica_escrita_por_40e8bcf3` (`autor_id`),
+  KEY `logica_escrita_por_14b35267` (`nota_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `logica_medio`
+--
+
+CREATE TABLE IF NOT EXISTS `logica_medio` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre_me` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `url` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `logica_nota`
+--
+
+CREATE TABLE IF NOT EXISTS `logica_nota` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `fecha` date NOT NULL,
-  `pagina` int(3) NOT NULL,
-  `tipo` char(15) COLLATE utf8_unicode_ci NOT NULL,
-  `municipio` char(50) COLLATE utf8_unicode_ci NOT NULL,
-  `sintesis` char(254) COLLATE utf8_unicode_ci NOT NULL,
+  `paginas` int(11) NOT NULL,
+  `tipo` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `municipio` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `sintesis` longtext COLLATE utf8_unicode_ci NOT NULL,
   `texto` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `imagen` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `protagonista`
+-- Estructura de tabla para la tabla `logica_otrostemas`
 --
 
-CREATE TABLE IF NOT EXISTS `protagonista` (
-  `id` int(9) NOT NULL AUTO_INCREMENT,
-  `nombre` char(35) COLLATE utf8_unicode_ci NOT NULL,
-  `genero` char(1) COLLATE utf8_unicode_ci NOT NULL,
-  `cargo` char(150) COLLATE utf8_unicode_ci NOT NULL,
+CREATE TABLE IF NOT EXISTS `logica_otrostemas` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `otrostemas` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `subtemas`
+-- Estructura de tabla para la tabla `logica_protagonista`
 --
 
-CREATE TABLE IF NOT EXISTS `subtemas` (
-  `id` int(9) NOT NULL AUTO_INCREMENT,
-  `nombre` char(30) COLLATE utf8_unicode_ci NOT NULL,
+CREATE TABLE IF NOT EXISTS `logica_protagonista` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre_pro` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `genero_pro` varchar(1) COLLATE utf8_unicode_ci NOT NULL,
+  `cargo` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `logica_publicada_en`
+--
+
+CREATE TABLE IF NOT EXISTS `logica_publicada_en` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nota_id` int(11) NOT NULL,
+  `medio_id` int(11) NOT NULL,
+  `vinculo` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `seccion` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `logica_publicada_en_14b35267` (`nota_id`),
+  KEY `logica_publicada_en_90211594` (`medio_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `logica_subtema`
+--
+
+CREATE TABLE IF NOT EXISTS `logica_subtema` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre_sub` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `logica_tema`
+--
+
+CREATE TABLE IF NOT EXISTS `logica_tema` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre_te` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `logica_trata_de`
+--
+
+CREATE TABLE IF NOT EXISTS `logica_trata_de` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nota_id` int(11) NOT NULL,
+  `subtema_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `logica_trata_de_14b35267` (`nota_id`),
+  KEY `logica_trata_de_48de5993` (`subtema_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -331,18 +543,6 @@ CREATE TABLE IF NOT EXISTS `tastypie_apikey` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_id` (`user_id`),
   KEY `tastypie_apikey_c0d4be93` (`key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `tema`
---
-
-CREATE TABLE IF NOT EXISTS `tema` (
-  `id_tema` int(5) NOT NULL AUTO_INCREMENT,
-  `nombre` char(30) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id_tema`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 --
@@ -382,6 +582,55 @@ ALTER TABLE `auth_user_user_permissions`
 ALTER TABLE `django_admin_log`
   ADD CONSTRAINT `content_type_id_refs_id_93d2d1f8` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`),
   ADD CONSTRAINT `user_id_refs_id_c0d12874` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`);
+
+--
+-- Filtros para la tabla `logica_colabora_en`
+--
+ALTER TABLE `logica_colabora_en`
+  ADD CONSTRAINT `medio_id_refs_id_77ef712f` FOREIGN KEY (`medio_id`) REFERENCES `logica_medio` (`id`),
+  ADD CONSTRAINT `autor_id_refs_id_a6881427` FOREIGN KEY (`autor_id`) REFERENCES `logica_autor` (`id`);
+
+--
+-- Filtros para la tabla `logica_correspondiete_a`
+--
+ALTER TABLE `logica_correspondiete_a`
+  ADD CONSTRAINT `tema_id_refs_id_48035c78` FOREIGN KEY (`tema_id`) REFERENCES `logica_tema` (`id`),
+  ADD CONSTRAINT `area_id_refs_id_733b521f` FOREIGN KEY (`area_id`) REFERENCES `logica_area` (`id`);
+
+--
+-- Filtros para la tabla `logica_declarada_por`
+--
+ALTER TABLE `logica_declarada_por`
+  ADD CONSTRAINT `medio_id_refs_id_88e143d1` FOREIGN KEY (`medio_id`) REFERENCES `logica_medio` (`id`),
+  ADD CONSTRAINT `nota_id_refs_id_46cd66c6` FOREIGN KEY (`nota_id`) REFERENCES `logica_nota` (`id`);
+
+--
+-- Filtros para la tabla `logica_derivado_de`
+--
+ALTER TABLE `logica_derivado_de`
+  ADD CONSTRAINT `subtema_id_refs_id_fc29004f` FOREIGN KEY (`subtema_id`) REFERENCES `logica_subtema` (`id`),
+  ADD CONSTRAINT `Tema_id_refs_id_cefd8ecd` FOREIGN KEY (`Tema_id`) REFERENCES `logica_tema` (`id`);
+
+--
+-- Filtros para la tabla `logica_escrita_por`
+--
+ALTER TABLE `logica_escrita_por`
+  ADD CONSTRAINT `autor_id_refs_id_1990cc07` FOREIGN KEY (`autor_id`) REFERENCES `logica_autor` (`id`),
+  ADD CONSTRAINT `nota_id_refs_id_e0692b06` FOREIGN KEY (`nota_id`) REFERENCES `logica_nota` (`id`);
+
+--
+-- Filtros para la tabla `logica_publicada_en`
+--
+ALTER TABLE `logica_publicada_en`
+  ADD CONSTRAINT `medio_id_refs_id_a8c466cc` FOREIGN KEY (`medio_id`) REFERENCES `logica_medio` (`id`),
+  ADD CONSTRAINT `nota_id_refs_id_2bd9db71` FOREIGN KEY (`nota_id`) REFERENCES `logica_nota` (`id`);
+
+--
+-- Filtros para la tabla `logica_trata_de`
+--
+ALTER TABLE `logica_trata_de`
+  ADD CONSTRAINT `subtema_id_refs_id_6ee79eff` FOREIGN KEY (`subtema_id`) REFERENCES `logica_subtema` (`id`),
+  ADD CONSTRAINT `nota_id_refs_id_48dff6b1` FOREIGN KEY (`nota_id`) REFERENCES `logica_nota` (`id`);
 
 --
 -- Filtros para la tabla `tastypie_apikey`

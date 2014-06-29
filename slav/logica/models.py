@@ -59,4 +59,38 @@ class Nota(models.Model):
 def __unicode__(self):
   	return self.titulo
 
+class Colabora_en(models.Model):
+ autor = models.ForeignKey(Autor)
+ medio = models.ForeignKey(Medio)
 
+class Correspondiete_a(models.Model):
+  tema = models.ForeignKey(Tema)
+  area = models.ForeignKey(Area)
+
+class Declarada_por(models.Model):
+  nota = models.ForeignKey(Nota)
+  medio = models.ForeignKey(Medio)
+  evaluacion = models.CharField(max_length=1)
+def __unicode__(self):
+ 	return self.evaluacion	
+
+class Derivado_de(models.Model):
+  subtema = models.ForeignKey(Subtema)
+  Tema = models.ForeignKey(Tema)
+
+class Escrita_por(models.Model):
+	autor = models.ForeignKey(Autor)
+	nota = models.ForeignKey(Nota)	
+
+class Publicada_en(models.Model):
+ nota = models.ForeignKey(Nota)
+ medio = models.ForeignKey(Medio)
+ vinculo = models.CharField(max_length=100)
+ seccion = models.CharField(max_length=30)
+
+ def __unicode__(self):
+  return self.seccion
+
+class Trata_de(models.Model):
+ nota = models.ForeignKey(Nota)
+ subtema = models.ForeignKey(Subtema)	
