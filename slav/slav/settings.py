@@ -46,7 +46,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',    
     'tastypie',
-    'logica'
+    'logica',
+    'djangular'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -62,11 +63,18 @@ ROOT_URLCONF = 'slav.urls'
 
 WSGI_APPLICATION = 'slav.wsgi.application'
 
-EDIA_ROOT = os.path.join(RUTA_PROYECTO, 'carga')
+MEDIA_ROOT = os.path.join(RUTA_PROYECTO, 'carga')
 
 MEDIA_URL = '/media/'
 
+STATIC_ROOT = 'C:\Users\Marcojrzx\Documents\mtech\SICLAV1\SLAV1\slav\slav\static'
 
+STATICFILES_DIRS = (
+    # Put strings here, like "/home/html/static" or "C:/www/django/static".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+    os.path.join(RUTA_PROYECTO,'statica'),
+)
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
